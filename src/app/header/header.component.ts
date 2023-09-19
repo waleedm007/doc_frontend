@@ -64,6 +64,10 @@ export class HeaderComponent implements OnInit {
   selectSuggestion(suggestion: string) {
     // this.searchQuery = suggestion;
     this.showResult = false;
+    if(suggestion==null){
+    this.showResult = false;
+
+    }
   }
   getValue(myLink: any, isCategory: boolean) {
     const linkText = myLink;
