@@ -1,0 +1,24 @@
+<nav class='animated bounceInDown' style="border-right: 1px solid rgb(168, 167, 167);" >
+  <h2 style="
+        margin-bottom: 0px;font-weight: 700;">Pos Geniee</h2>
+  <ul class="main">
+
+
+    <li class='sub-menu' *ngFor="let item of categoryData">
+      
+      <a (click)="getValue(item,true)" class="cat-sub" 
+        style="background-color:teal;border-bottom: 1px solid black;color: antiquewhite; border-right: 0.5px solid gray;cursor: pointer;border: 1px solid white;border-radius: 5px;">
+        
+        <span #categoryLink>  {{ item.title }}</span>
+        <div class='fa fa-caret-down right'></div>
+      </a>
+      <ul>
+        <li *ngFor="let sub of item.sub_category" [ngClass]="{ 'active': sub === activeSubCategory }">
+          <a (click)="getValue(sub, false); getPost(sub.id); setActiveSubCategory(sub)" style="cursor: pointer;">
+            <span #myLink>{{ sub.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,38 @@
+<div *ngIf="!value">
+  <h1 style="text-align: center;padding-top: 40px;">Welocome On Document.</h1>
+</div>
+<div>
+  <p *ngIf="value"><a href="">Home</a>> <span style="font-size: larg;font-weight: 300;">{{ value.title}}</span></p>
+
+
+  <div *ngIf="isLoading" class="loading-container">
+    <i class="fa fa-circle-o-notch fa-spin" style="font-size:50px"></i>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <h1>{{ value.title}}</h1>
+    <hr>
+    <h3 class="pt-3" *ngIf="isCategory">Articels</h3>
+    <ul>
+      <li *ngFor="let item of value.sub_category">
+        <a (click)="getValue(item,false)" (click)="getPost(item.id)" style="cursor: pointer;color: dodgerblue;">
+          <span>{{ item.title }}</span>
+        </a>
+      </li>
+    </ul>
+    <div>
+     
+      <!-- Display your data here -->
+      <div class="row" *ngIf="!isCategory">
+       
+        <div class='monitor'>
+          <div *ngIf="postDataApi && postDataApi.data && postDataApi.data.post_data">
+            <div [innerHTML]="postDataApi.data.post_data"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>

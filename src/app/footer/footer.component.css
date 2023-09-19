@@ -1,0 +1,12 @@
+.container-fluid {
+    padding: 0px;
+    margin: 0px;
+}
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0px;
+    margin-top: 133px;
+  }

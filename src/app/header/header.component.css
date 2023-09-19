@@ -1,0 +1,55 @@
+.custom-header {
+    background-color: black;
+    /* top: 0; */
+  }
+  
+  .custom-header .navbar-nav .nav-link {
+    color: white;
+  }
+  .header {
+    background-color: chocolate;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+.header h1 {
+  color: aliceblue;
+  font-family: sans-serif;
+}
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 500px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+ul.suggestions {
+  position: absolute;
+  z-index: 1;
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 500px;
+  margin: 0;
+  padding: 0;
+}
+
+ul.suggestions li {
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid rgb(226, 222, 222);
+  color: black;
+  text-align: left;
+}
+
+ul.suggestions li:hover {
+  background-color: #f2f2f2;
+}

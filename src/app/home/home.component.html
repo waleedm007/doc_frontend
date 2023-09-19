@@ -1,0 +1,17 @@
+<app-header class="{{ isUserLogined === true ? '':'hide' }}"></app-header>
+<div class="container mt-5" class="{{ isUserLogined === true ? '':'hide' }}">
+  <div class="row">
+    <div class="col-md-3">
+
+      <app-side-bar></app-side-bar>
+    </div>
+    <div class="col-md-9">
+      <app-right-content></app-right-content>
+      
+    </div>
+
+  </div>
+
+
+</div>
+<app-footer class="{{ isUserLogined === true ? '':'hide' }}"></app-footer>

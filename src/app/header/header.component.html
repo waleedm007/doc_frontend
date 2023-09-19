@@ -1,0 +1,38 @@
+<nav style="position: fixed;width: 1370px;z-index: 1;" class="navbar navbar-expand-lg navbar-light custom-header">
+    <!-- Use custom-header class for background color -->
+    <a class="navbar-brand" routerLink="/home" style="color: aliceblue;">Pos Geniee</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/Home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" *ngIf="!isUserLogined">
+                <a class="nav-link" routerLink="auth/login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isUserLogined">
+                <a class="nav-link" style="cursor: pointer;" (click)="logout()">logout</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<div class="header">
+    <h1>What are you looking for!</h1>
+    <div class="autocomplete">
+        <input type="text" [(ngModel)]="searchQuery" id="searchBar" name="searchQuery" (input)="onSearch()"
+            class="form-control search" placeholder="Search..." />
+        <ul class="suggestions" *ngIf="showResult">
+            <li *ngIf="!result">
+                   <span>Result not found..</span> 
+            </li>
+            <li (click)="getValue(suggestion,false)" (click)="getPost(suggestion.id)" *ngFor="let suggestion of result.data" style="cursor: pointer;"
+                (click)="selectSuggestion(suggestion.title)">
+                <a><span #myLink>{{ suggestion.title }}</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
