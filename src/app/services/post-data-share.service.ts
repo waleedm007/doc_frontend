@@ -34,6 +34,6 @@ export class PostDataShareService {
           console.error(error);
         }
       );
-    }, 500);
+    }, 300);
   }
 }
