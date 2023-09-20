@@ -1,5 +1,4 @@
 export const environment = {
-    production: false,
-    apiUrl: 'http://admin-doc.thesuperstarshop.com/api', // Replace this with your actual base URL
-  };
-  
+  production: false,
+  apiUrl: 'http://127.0.0.1:8000/api', // Replace this with your actual base URL
+};
