@@ -35,7 +35,7 @@ export class SideBarComponent implements OnInit {
     this.postService.getPostData(id).subscribe((data)=>{
       
       this.sherePost.setValue(data);
-      console.log(data);
+
     
     });
   }

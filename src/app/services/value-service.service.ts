@@ -16,6 +16,6 @@ export class ValueServiceService {
       this.valueSubject.next(value);
       this.valueSubject1.next(isCategory);
       
-    }, 1000);
+    }, 100);
   }
 }

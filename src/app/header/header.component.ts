@@ -6,6 +6,7 @@ import { SearchService } from '../services/search.service';
 import { Pokedex } from '../interface/PostDataInter';
 import { PostService } from '../services/post.service';
 import { PostDataShareService } from '../services/post-data-share.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private searchService: SearchService,
     private postService:PostService,
-    private sherePost:PostDataShareService) { }
+    private sherePost:PostDataShareService,
+    private toaster:ToastrService) { }
   ngOnInit(): void {
     this.valueService.value$.subscribe((newValue) => {
       this.value = newValue;
@@ -57,6 +59,8 @@ export class HeaderComponent implements OnInit {
         data: []
       };
       this.showResult = false;
+      this.toaster.error('Eneter the letter greater then 3!');
+      
     }
     
   }

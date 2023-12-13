@@ -14,26 +14,23 @@ export class PostDataShareService {
   public isLoading$: Observable<boolean> = this.isLoadingSubject.asObservable();
   
   setValue(value: any) {
-    // Show loading indicator
+    
     this.isLoadingSubject.next(true);
   
     setTimeout(() => {
-      // Simulate an API call with a delay (5 seconds in this case)
-      // Replace this with your actual API call
+      
       this.postService.getPostData(value).subscribe(
         (response) => {
-          // Handle API response here
-          // Once the API call is complete, hide the loading indicator
+      
           this.isLoadingSubject.next(false);
           this.valueSubject.next(value);
         },
         (error) => {
-          // Handle API error here
-          // Don't forget to hide the loading indicator in case of an error
+          
           this.isLoadingSubject.next(false);
           console.error(error);
         }
       );
-    }, 300);
+    }, 100);
   }
 }
