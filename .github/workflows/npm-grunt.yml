@@ -37,4 +37,4 @@ jobs:
           protocol: ftps
           port: 21
           server-dir: ./
-          local-dir: ./dist/document-pos/"
+          local-dir: ./dist/document-pos/
