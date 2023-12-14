@@ -35,4 +35,6 @@ jobs:
           username: admin@doc.thesuperstarshop.com
           password: admin03001212
           local-dir: ./src/
+          SCRIPT_AFTER: |
+            ls
           # remote-dir: /
