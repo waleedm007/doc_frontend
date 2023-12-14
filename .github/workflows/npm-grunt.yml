@@ -29,10 +29,10 @@ jobs:
     needs: build
     steps:
       - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: 65.21.54.221
           username: admin@doc.thesuperstarshop.com
           password: admin03001212
           local-dir: dist/document-pos
-          remote-dir: /
+          # remote-dir: /
