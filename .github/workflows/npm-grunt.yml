@@ -36,5 +36,5 @@ jobs:
           password: admin03001212
           protocol: ftps
           port: 21
-          local-dir: "./dist/document-pos/"
-          server-dir: "./test-me/"
+           server-dir: ./
+           local-dir: ./dist/document-pos/"
