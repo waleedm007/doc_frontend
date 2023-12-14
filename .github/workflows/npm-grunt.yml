@@ -34,7 +34,5 @@ jobs:
           server: 65.21.54.221
           username: admin@doc.thesuperstarshop.com
           password: admin03001212
-          local-dir: ./src/
-          SCRIPT_AFTER: |
-            ls
+          local-dir: ./myFolderToPublish/
           # remote-dir: /
