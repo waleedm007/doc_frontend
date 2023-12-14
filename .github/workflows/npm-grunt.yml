@@ -34,5 +34,7 @@ jobs:
           server: 65.21.54.221
           username: admin@doc.thesuperstarshop.com
           password: admin03001212
-          local-dir: ./myFolderToPublish/
-          # remote-dir: /
+          protocol: ftps
+          port: 21
+          local-dir: "./dist/document-pos/"
+          server-dir: "./test-me/"
