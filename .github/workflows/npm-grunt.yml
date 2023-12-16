@@ -1,0 +1,39 @@
+name: Angular Build and FTP Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: 65.21.54.221
+          username: admin@doc.thesuperstarshop.com
+          password: admin03001212
+          protocol: ftp
+          port: 21
+          local-dir: ./
