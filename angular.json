@@ -62,10 +62,22 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DocumentPos:build:production"
+              "browserTarget": "DocumentPos:build:production",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.prod.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
             },
             "development": {
-              "browserTarget": "DocumentPos:build:development"
+              "browserTarget": "DocumentPos:build:development",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.stage.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "development"
