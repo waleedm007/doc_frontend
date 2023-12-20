@@ -29,12 +29,9 @@
   <script>
 
     $(document).ready(function () {
-      // Use event delegation to handle click events
       $(document).on("click", ".sub-menu > .cat-sub", function () {
-        // Toggle the visibility of the clicked submenu
-        $(this).next("ul").slideToggle("100");
 
-        // Toggle the caret icon
+        $(this).next("ul").slideToggle("100");
         $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
       });
       $(document).on('change', '.search', function () {
