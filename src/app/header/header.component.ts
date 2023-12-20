@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
     // this.searchQuery = suggestion;
     this.showResult = false;
     if(suggestion==null){
-    this.showResult = true;
+    this.showResult = false;
 
     }
   }
@@ -78,10 +78,14 @@ export class HeaderComponent implements OnInit {
     const isCate = isCategory;
     // console.log('Span Value:', isCate);
     this.valueService.setValue(linkText,isCate);
+    // this.showResult = false;
+
   }
   getPost(id:number){
     this.postService.getPostData(id).subscribe((data)=>{
       this.sherePost.setValue(data);
+    this.showResult = false;
+
     
     });
   }
