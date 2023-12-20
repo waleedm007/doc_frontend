@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PostService } from './post.service';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +15,22 @@ export class PostDataShareService {
   public isLoading$: Observable<boolean> = this.isLoadingSubject.asObservable();
   
   setValue(value: any) {
-    
     this.isLoadingSubject.next(true);
   
-    setTimeout(() => {
-      
-      this.postService.getPostData(value).subscribe(
-        (response) => {
-      
+    const subscription = this.postService.getPostData(value)
+      .pipe(
+        finalize(() => {
           this.isLoadingSubject.next(false);
+          subscription.unsubscribe(); 
+        })
+      )
+      .subscribe(
+        (response) => {
           this.valueSubject.next(value);
         },
         (error) => {
-          
-          this.isLoadingSubject.next(false);
           console.error(error);
         }
       );
-    }, 100);
   }
 }

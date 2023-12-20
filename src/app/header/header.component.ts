@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
     // this.searchQuery = suggestion;
     this.showResult = false;
     if(suggestion==null){
-    this.showResult = false;
+    this.showResult = true;
 
     }
   }
